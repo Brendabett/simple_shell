@@ -21,7 +21,7 @@ return (NULL);
 }
 for (i = 0; str[i]; i++)
 copy[i] = str[i];
-copy[i] = 0;
+copy[i] = '/0';
 token = strtok(copy, delim);
 arr = malloc(sizeof(char *) * 2);
 arr[0] = _strdup(token);
@@ -94,7 +94,7 @@ for (i = 0; i < old_size; i++)
 new[i] = old[i];
 free(ptr);
 for (i = old_size; i < new_size; i++)
-new[i] = 0;
+new[i] = '/0';
 }
 if (new_size < old_size)
 {
