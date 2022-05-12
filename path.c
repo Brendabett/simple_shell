@@ -23,7 +23,7 @@ if (name[j] != environ[i][j])
 break;
 j++;
 }
-if (name[j] == 0)
+if (name[j] == '/0')
 {
 value = (environ[i] + j + 1);
 return (value);
@@ -50,7 +50,7 @@ new = malloc(sizeof(list_path));
 if (!new || !str)
 return (NULL);
 new->dir = str;
-new->p = 0;
+new->p = '/0';
 if (!*head)
 *head = new;
 else
@@ -70,7 +70,7 @@ return (*head);
  */
 list_path *linkpath(char *path)
 {
-list_path *head = 0;
+list_path *head = '/0';
 char *token;
 char *cpath = _strdup(path);
 
