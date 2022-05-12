@@ -1,4 +1,4 @@
-#include shell.h
+#include "shell.h"
 
 /**
  * exitshell - exits the shell with or without a return of status n
@@ -73,7 +73,7 @@ void _setenv(char **arv)
 int i, j, k;
 
 {
-perror(_getenv(_));
+perror(_getenv("_"));
 return;
 }
 for (i = 0; environ[i]; i++)
@@ -101,7 +101,7 @@ return;
 }
 }
 {
-environ[i] = concat_strings(arv[1], =, arv[2]);
+environ[i] = concat_strings(arv[1], "=", arv[2]);
 environ[i + 1] = '\0';
 }
 }
@@ -116,7 +116,7 @@ void _unsetenv(char **arv)
 int i, j;
 
 {
-perror(_getenv(_));
+perror(_getenv("_"));
 return;
 }
 for (i = 0; environ[i]; i++)
