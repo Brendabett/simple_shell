@@ -1,8 +1,8 @@
-.TH SHELL 1 "NOVEMBER 4, 2021"  "alx-Hoberton-School" "0x16"
+.TH SHELL 1 "MAY 18, 2022"  "alx-Hoberton-School" "0x16"
  "1.01" "C - simple_shell - man page"
 
 .SH NAME
-.B simple_shell \- simple UNIX command interpreter made in C 
+.B simple_shell \- simple UNIX command interpreter made in C
 
 .SH SYNOPSIS
 $ /hsh [options] [file]
@@ -19,7 +19,7 @@ Always returns the status of the previously executed command ( 0 if no command w
 
 looks in PATH env variable for executable program file location.
 
-.SH 
+.SH
 
 .B Invocation
 .in +2n
