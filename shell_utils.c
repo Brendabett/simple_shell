@@ -83,7 +83,7 @@ func(tokenized_command);
 if (command_type == INVALID_COMMAND)
 {
 print(shell_name, STDERR_FILENO);
-print(": 1: " , STDERR_FILENO);
+print(": 1: ", STDERR_FILENO);
 print(tokenized_command[0], STDERR_FILENO);
 print(": not found\n", STDERR_FILENO);
 status = 127;
@@ -163,7 +163,7 @@ char *name_cpy;
 for (my_environ = environ; *my_environ != NULL; my_environ++)
 {
 for (pair_ptr = *my_environ, name_cpy = name;
-     *pair_ptr == *name_cpy; pair_ptr++, name_cpy++)
+*pair_ptr == *name_cpy; pair_ptr++, name_cpy++)
 {
 if (*pair_ptr == '=')
 break;
