@@ -1,4 +1,4 @@
-#include shell.h
+#include "shell.h"
 
 /**
  * _getenv - gets the value of the global variable
@@ -72,11 +72,11 @@ list_path *head = '\0';
 char *token;
 char *cpath = _strdup(path);
 
-token = strtok(cpath, :);
+token = strtok(cpath, ":");
 while (token)
 {
 head = add_node_end(&head, token);
-token = strtok(NULL, :);
+token = strtok(NULL, ":");
 }
 return (head);
 }
@@ -95,7 +95,7 @@ list_path *tmp = head;
 
 while (tmp)
 {
-string = concat_strings(tmp->dir, /, filename);
+string = concat_strings(tmp->dir, "/", filename);
 if (stat(string, &st) == 0)
 return (string);
 free(string);
