@@ -58,5 +58,5 @@ exit(arg);
 }
 }
 else
-print($: exit doesnt take more than one argumentn, STDERR_FILENO);
+print("$: exit doesn't take more than one argument\n", STDERR_FILENO);
 }
