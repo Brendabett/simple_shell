@@ -56,8 +56,7 @@ ssize_t len = 0;
 char *buf = NULL, **arv, *value, *pathname;
 size_t size = 0;
 list_path *head = NULL;
-
-void (*f) (char **);
+void (*f)(char **);
 signal(SIGINT, signal_handler);
 while (len != EOF)
 {
