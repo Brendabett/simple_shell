@@ -1,4 +1,4 @@
-#include shell.h
+#include "shell.h"
 
 /**
  * Auth: Emma Udeji
@@ -9,21 +9,22 @@
  */
 
 
-/** parse_command - determines the type of the command
- * @command: command to be parsed
- *
- * Return: constant representing the type of the command
- * Description -
- *  EXTERNAL_COMMAND (1) represents commands like /bin/ls
- * INTERNAL_COMMAND (2) represents commands like exit, env
- * PATH_COMMAND (3) represents commands found in the PATH like ls
- * INVALID_COMMAND (-1) represents invalid commands
- */
+/*
+* parse_command - determines the type of the command
+* @command: command to be parsed
+*
+* Return: constant representing the type of the command
+* Description -
+*  EXTERNAL_COMMAND (1) represents commands like /bin/ls
+* INTERNAL_COMMAND (2) represents commands like exit, env
+* PATH_COMMAND (3) represents commands found in the PATH like ls
+* INVALID_COMMAND (-1) represents invalid commands
+*/
 
 int parse_command(char *command)
 {
 int i;
-char *internal_command[] = {env, exit, NULL};
+char *internal_command[] = {"env", "exit", NULL};
 char *path = NULL;
 
 for (i = 0; command[i] != '\0'; i++)
@@ -62,7 +63,7 @@ if (command_type == EXTERNAL_COMMAND)
 {
 if (execve(tokenized_command[0], tokenized_command, NULL) == -1)
 {
-perror(_getenv(PWD));
+perror(_getenv("PWD"));
 exit(2);
 }
 }
@@ -70,7 +71,7 @@ if (command_type == PATH_COMMAND)
 {
 if (execve(check_path(tokenized_command[0]), tokenized_command, NULL) == -1)
 {
-perror(_getenv(PWD));
+perror(_getenv("PWD"));
 exit(2);
 }
 }
@@ -82,9 +83,9 @@ func(tokenized_command);
 if (command_type == INVALID_COMMAND)
 {
 print(shell_name, STDERR_FILENO);
-print(: 1: , STDERR_FILENO);
+print(": 1: " , STDERR_FILENO);
 print(tokenized_command[0], STDERR_FILENO);
-print(: not foundn, STDERR_FILENO);
+print(": not found\n", STDERR_FILENO);
 status = 127;
 }
 }
@@ -99,17 +100,17 @@ char *check_path(char *command)
 {
 char **path_array = NULL;
 char *temp, *temp2, *path_cpy;
-char *path = _getenv(PATH);
+char *path = _getenv("PATH");
 int i;
 
 if (path == NULL || _strlen(path) == 0)
 return (NULL);
 path_cpy = malloc(sizeof(*path_cpy) * (_strlen(path) + 1));
 _strcpy(path, path_cpy);
-path_array = tokenizer(path_cpy, :);
+path_array = tokenizer(path_cpy, ":");
 for (i = 0; path_array[i] != NULL; i++)
 {
-temp2 = _strcat(path_array[i], /);
+temp2 = _strcat(path_array[i], "/");
 temp = _strcat(temp2, command);
 if (access(temp, F_OK) == 0)
 {
@@ -136,7 +137,7 @@ void (*get_func(char *command))(char **)
 {
 int i;
 function_map mapping[] = {
-{env, env}, {exit, quit}
+{"env", "env"}, {"exit", quit}
 };
 
 for (i = 0; i < 2; i++)
