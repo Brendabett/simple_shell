@@ -1,4 +1,4 @@
-#include shell.h
+#include "shell.h"
 
 /**
  * isterminal - check if it's a terminal
@@ -9,7 +9,7 @@
 void isterminal(void)
 {
 if (isatty(STDIN_FILENO))
-_puts(#cisfun$ );
+_puts("#cisfun$ ");
 }
 
 /**
@@ -20,7 +20,7 @@ _puts(#cisfun$ );
 void signal_handler(int sig_num)
 {
 if (sig_num == SIGINT)
-_puts(n#cisfun$ );
+_puts("\n#cisfun$ ");
 }
 
 /**
@@ -37,7 +37,7 @@ if (len == -1)
 {
 if (isatty(STDIN_FILENO))
 {
-_puts(n);
+_puts("\n");
 free(buf);
 }
 exit(0);
@@ -64,11 +64,11 @@ while (len != EOF)
 isterminal();
 len = getline(&buf, &size, stdin);
 _EOF(len, buf);
-arv = splitstring(buf,  n);
+arv = splitstring(buf, " \n");
 execute(arv);
 else
 {
-value = _getenv(PATH);
+value = _getenv("PATH");
 head = linkpath(value);
 pathname = _which(arv[0], head);
 f = checkbuiltinfnc(arv);
