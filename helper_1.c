@@ -1,4 +1,4 @@
-#include shell.h
+#include "shell.h"
 
 /**
  *_strcmp - compare two strings
@@ -88,17 +88,6 @@ return (len);
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /**
  *_strchr - locates a char in a string
  *@s: string to be searched
@@ -118,4 +107,3 @@ return (s + i);
 else
 return (NULL);
 }
-
