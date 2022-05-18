@@ -30,13 +30,13 @@ return (NULL);
 }
 
 finish = string + _strcspn(string, delim);
-if (*finish == 0)
+if (*finish == '\0')
 {
 *save_ptr = finish;
 return (string);
 }
 
-*finish = 0;
+*finish = '\0';
 *save_ptr = finish + 1;
 return (string);
 }
@@ -52,12 +52,12 @@ int _atoi(char *s)
 unsigned int n = 0;
 
 do {
-if (*s == -)
+if (*s == '-')
 return (-1);
-else if ((*s < 0 || *s > 9) && *s != 0)
+else if ((*s < '0' || *s > '9') && *s != '\0')
 return (-1);
-else if (*s >= 0  && *s <= 9)
-n = (n * 10) + (*s - 0);
+else if (*s >= '0'  && *s <= '9')
+n = (n * 10) + (*s - '0');
 else if (n > 0)
 break;
 } while (*s++);
@@ -118,7 +118,7 @@ print("\n($) ", STDIN_FILENO);
 }
 
 /**
- * remove_comment - removes/ignores everything after a # char
+ * remove_comment - removes/ignores everything after a '#' char
  * @input: input to be used
  *
  * Return: void
@@ -127,13 +127,13 @@ void remove_comment(char *input)
 {
 int i = 0;
 
-if (input[i] == #)
-input[i] = 0;
-while (input[i] != 0)
+if (input[i] == '#')
+input[i] = '\0';
+while (input[i] != '\0')
 {
-if (input[i] == # && input[i - 1] ==  )
+if (input[i] == '#' && input[i - 1] == ' ')
 break;
 i++;
 }
-input[i] = 0;
+input[i] = '\0';
 }
