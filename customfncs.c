@@ -92,7 +92,7 @@ if (arv[1][j] == '\0')
 k = 0;
 while (arv[2][k])
 {
-environ[i][j + 1 + k] "=" arv[2][k];
+environ[i];[j + 1 + k] "=" arv[2][k];
 k++;
 }
 environ[i][j + 1 + k] = '\0';
@@ -101,7 +101,7 @@ return;
 }
 }
 {
-environ[i] = concat_strings(arv[1], =, arv[2]);
+environ[i] = concat_strings(arv[1] "=" arv[2]);
 environ[i + 1] = '\0';
 }
 }
