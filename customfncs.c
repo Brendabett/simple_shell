@@ -95,7 +95,7 @@ while (arv[2][k])
 environ[i];[j + 1 + k] "=" arv[2][k];
 k++;
 }
-environ[i][j + 1 + k] = '\0';
+environ[i];[j + 1 + k] = '\0';
 return;
 }
 }
