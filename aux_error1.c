@@ -19,12 +19,12 @@ _strcat(error, ver_str);
 _strcat(error, ": ");
 _strcat(error, datashell->args[0]);
 _strcat(error, msg);
-if (datashell->args[1][0] == -)
+if (datashell->args[1][0] == '-')
 {
 illegal_flag = malloc(3);
-illegal_flag[0] = -;
+illegal_flag[0] = '-';
 illegal_flag[1] = datashell->args[1][1];
-illegal_flag[2] = 0;
+illegal_flag[2] = '\0';
 _strcat(error, illegal_flag);
 free(illegal_flag);
 }
@@ -49,14 +49,14 @@ int length, len_id;
 char *error, *ver_str, *msg;
 
 ver_str = aux_itoa(datashell->counter);
-if (datashell->args[1][0] == -)
+if (datashell->args[1][0] == '-')
 {
 msg = ": Illegal option ";
 len_id = 2;
 }
 else
 {
-msg = ": cant cd to ;
+msg = ": cant cd to ";
 len_id = _strlen(datashell->args[1]);
 }
 
@@ -99,12 +99,12 @@ free(ver_str);
 return (NULL);
 }
 _strcpy(error, datashell->argve[0]);
-_strcat(error, : );
+_strcat(error, ": ");
 _strcat(error, ver_str);
-_strcat(error, : );
+_strcat(error, ": ");
 _strcat(error, datashell->args[0]);
-_strcat(error, : not foundn);
-_strcat(error, 0);
+_strcat(error, ": not found\n");
+_strcat(error, "\0");
 free(ver_str);
 return (error);
 }
@@ -131,16 +131,14 @@ free(ver_str);
 return (NULL);
 }
 _strcpy(error, datashell->argve[0]);
-_strcat(error, : );
+_strcat(error, ": ");
 _strcat(error, ver_str);
-_strcat(error, : );
+_strcat(error, ": ");
 _strcat(error, datashell->args[0]);
-_strcat(error, : Illegal number: );
+_strcat(error, ": Illegal number: ");
 _strcat(error, datashell->args[1]);
-_strcat(error, n0);
+_strcat(error, "\n\0");
 free(ver_str);
 
 return (error);
-}' > aux_error1.c
-' > aux_error1.c
-
+}
