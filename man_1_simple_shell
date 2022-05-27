@@ -1,0 +1,31 @@
+B.\"Manpage for simple shell
+.\"Created by Brian Kiprotich and Mercy Mukiri
+
+.TH SHELL 18th "May 2022" "ALX School" "Simple Shell man page"
+
+.SH NAME
+shell\fR \- UNIX command interpreter
+
+.SH SYNOPSIS
+shell\fR [\fIfilename\fR]
+
+.SH COPYRIGHT
+shell is Copyright (C) 2022 by Brian Kiprotich and Mercy Mukiri
+
+.SH DESCRIPTION
+Shell\fR is a command language interpreter which executes commands read from a file or standard input.
+
+.SH ARGUMENTS
+The first argument is assumed to be the name of a file containing shell commands. Shell reads and executes commands from this file, then exits.
+
+.SH Environment
+When a program is invoked it is given an array of strings called the environment that consist a list of name-value pairs, of the form name=value.
+
+.SH Exit Status
+An exit status of zero indicates success. A non-zero exit status indicates failure.
+
+.SH SEE ALSO
+access(2), chdir(2), execve(2), \_exit(2), exit(3), fflush(3), fork(2), free(3), isatty(3), getcwd(3), malloc(3), open(2), read(2), sh(1), signal(2), stat(2), wait(2), write(2)
+
+.SH AUTHORS
+Brian Kiprotich and Mercy Mukiri
