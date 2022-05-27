@@ -76,7 +76,7 @@ line = swap_char(line, 1);
 add_line(head_l, line);
 line = _strtok(NULL, ";|&");
 }
-while (line != NULL)
+while (line != NULL);
 }
 
 /**
