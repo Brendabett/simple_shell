@@ -141,7 +141,7 @@ char *read_line(int *i_eof);
 /* split.c */
 char *swap_char(char *input, int bool);
 void add_nodes(list_sep **head_s, command_list **head_l, char *input);
-Void go_next(list_sep **list_s, command_list **list_l, shell_data *datashell);
+go_next(list_sep **list_s, command_list **list_l, shell_data *datashell);
 int split_commands(shell_data *datashell, char *input);
 char **split_line(char *input);
 void go_next(list_sep **list_s, command_list **list_l, shell_data *datashell);
