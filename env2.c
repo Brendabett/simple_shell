@@ -53,7 +53,7 @@ free(var_env);
 }
 
 datashell->_environ = _reallocdp(datashell->_environ, i,
- sizeof(char *) * (i + 2));
+sizeof(char *) * (i + 2));
 datashell->_environ[i] = copy_info(name, valuue);
 datashell->_environ[i + 1] = NULL;
 }
