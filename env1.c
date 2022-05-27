@@ -1,4 +1,4 @@
-#include main.h
+#include "main.h"
 
 /**
  * cmp_env_name - compares env variables names
@@ -72,7 +72,7 @@ for (j = 0; datashell->_environ[i][j]; j++)
 ;
 
 write(STDOUT_FILENO, datashell->_environ[i], j);
-write(STDOUT_FILENO, n, 1);
+write(STDOUT_FILENO, "\n", 1);
 }
 datashell->status = 0;
 
