@@ -75,8 +75,7 @@ do {
 line = swap_char(line, 1);
 add_line(head_l, line);
 line = _strtok(NULL, ";|&");
-}
-while (line != NULL);
+}while (line != NULL);
 }
 
 /**
@@ -87,7 +86,7 @@ while (line != NULL);
  * @datashell: data structure
  * Return: no return
  */
-go_next(list_sep **list_s, command_list **list_l, shell_data *datashell)
+Void go_next(list_sep **list_s, command_list **list_l, shell_data *datashell)
 {
 int loop_sep;
 list_sep *ls_s;
