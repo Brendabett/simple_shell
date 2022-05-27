@@ -1,4 +1,4 @@
-#include main.h
+#include "main.h"
 
 /**
  * uncommented - deletes comments from the inp
@@ -49,7 +49,7 @@ char *inp;
 loop = 1;
 while (loop == 1)
 {
-write(STDIN_FILENO, #cisfun$ , 9);
+write(STDIN_FILENO, "#cisfun$ ", 9);
 inp = read_line(&i_eof);
 if (i_eof != -1)
 {
