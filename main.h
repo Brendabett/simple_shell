@@ -144,6 +144,7 @@ void add_nodes(list_sep **head_s, command_list **head_l, char *input);
 void go_next(list_sep **list_s, command_list **list_l, shell_data *datashell);
 int split_commands(shell_data *datashell, char *input);
 char **split_line(char *input);
+void go_next(list_sep **list_s, command_list **list_l, shell_data *datashell);
 
 /* rep_var.c */
 void check_env(var **h, char *in, shell_data *data);
