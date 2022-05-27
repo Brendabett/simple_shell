@@ -102,10 +102,12 @@ for (j = i = 0; i < nlen; i++)
 {
 if (inp[j] == '$')
 {
+if (!(indx->var_len) && !(indx->val_lenu))
 {
 new_inp[i] = inp[j];
 j++;
 }
+else if (indx->var_len && !(indx->val_lenu))
 {
 for (k = 0; k < indx->var_len; k++)
 j++;
