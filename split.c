@@ -71,6 +71,7 @@ i++;
 }
 
 line = _strtok(inp, ";|&");
+do {
 line = swap_char(line, 1);
 add_line(head_l, line);
 line = _strtok(NULL, ";|&");
