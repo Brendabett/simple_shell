@@ -1,5 +1,5 @@
 B.\"Manpage for simple shell
-.\"Created by Brian Kiprotich and Mercy Mukiri
+.\"Created by Brian rotich and Brenda Chelimo
 
 .TH SHELL 18th "May 2022" "ALX School" "Simple Shell man page"
 
@@ -28,4 +28,4 @@ An exit status of zero indicates success. A non-zero exit status indicates failu
 access(2), chdir(2), execve(2), \_exit(2), exit(3), fflush(3), fork(2), free(3), isatty(3), getcwd(3), malloc(3), open(2), read(2), sh(1), signal(2), stat(2), wait(2), write(2)
 
 .SH AUTHORS
-Brian Kiprotich and Mercy Mukiri
+Brian rotich and Brenda Chelimo
