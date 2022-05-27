@@ -26,7 +26,7 @@ else if (_strcmp(datashell->args[1], "alias") == 0)
 aux_help_alias();
 else
 write(STDERR_FILENO, datashell->args[0],
-      _strlen(datashell->args[0]));
+_strlen(datashell->args[0]));
 
 datashell->status = 0;
 return (1);
