@@ -1,4 +1,4 @@
-#include main.h
+#include "main.h"
 
 /**
  * is_cdir - checks : if is in the current directory.
@@ -40,7 +40,7 @@ if (path)
 {
 ptr_path = _strdup(path);
 len_cmd = _strlen(cmd);
-token_path = _strtok(ptr_path, :);
+token_path = _strtok(ptr_path, ":");
 i = 0;
 while (token_path != NULL)
 {
@@ -50,16 +50,16 @@ return (cmd);
 len_dir = _strlen(token_path);
 dir = malloc(len_dir + len_cmd + 2);
 _strcpy(dir, token_path);
-_strcat(dir, /);
+_strcat(dir, "/");
 _strcat(dir, cmd);
-_strcat(dir, 0);
+_strcat(dir, "\0");
 if (stat(dir, &st) == 0)
 {
 free(ptr_path);
 return (dir);
 }
 free(dir);
-token_path = _strtok(NULL, :);
+token_path = _strtok(NULL, ":");
 }
 free(ptr_path);
 if (stat(cmd, &st) == 0)
