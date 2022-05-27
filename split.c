@@ -1,4 +1,4 @@
-#include main.h
+#include "main.h"
 
 /**
  * swap_char - swaps | and & for non-printed chars
@@ -70,10 +70,10 @@ i++;
 }
 }
 
-line = _strtok(inp, ';|&');
+line = _strtok(inp, ";|&");
 line = swap_char(line, 1);
 add_line(head_l, line);
-line = _strtok(NULL, ';|&');
+line = _strtok(NULL, ";|&");
 } while (line != NULL);
 
 }
@@ -197,8 +197,7 @@ if (i == bsize)
 bsize += TOK_BUFSIZE;
 tokens = _reallocdp(tokens, i, sizeof(char *) * bsize);
 if (tokens == NULL)
-{write(STDERR_FILENO, ': allocation error\n', 18)
-;
+{write(STDERR_FILENO, ": allocation error\n", 18);
 exit(EXIT_FAILURE);
 }
 }
@@ -207,5 +206,4 @@ tokens[i] = token;
 }
 
 return (tokens);
-}' > split.c
-
+}
