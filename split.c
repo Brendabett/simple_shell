@@ -183,7 +183,7 @@ bsize = TOK_BUFSIZE;
 tokens = malloc(sizeof(char *) * (bsize));
 if (tokens == NULL)
 {
-write(STDERR_FILENO, : allocation errorn, 18);
+write(STDERR_FILENO, ": allocation error\n", 18);
 exit(EXIT_FAILURE);
 }
 
