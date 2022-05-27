@@ -86,7 +86,7 @@ line = _strtok(NULL, ";|&");
  * @datashell: data structure
  * Return: no return
  */
-Void go_next(list_sep **list_s, command_list **list_l, shell_data *datashell)
+void go_next(list_sep **list_s, command_list **list_l, shell_data *datashell)
 {
 int loop_sep;
 list_sep *ls_s;
